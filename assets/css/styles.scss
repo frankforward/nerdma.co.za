@@ -1,0 +1,22 @@
+---
+---
+
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+
+@import "bootstrap/mixins";
+
+@import "site-base";
+@import "site-navbar";
+@import "site-blocks";
+
+.btn {
+  border-radius: 3px;
+}
+.logo {
+  width: 120px;
+}
+
+/** {*/
+/*  outline: 1px solid lightblue;*/
+/*}*/

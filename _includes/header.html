@@ -13,17 +13,18 @@
         <div class="row align-items-center">
 
             <div class="col-6 col-md-3 col-xl-4  d-block">
-                <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">imagine<span class="text-primary">.</span> </a></h1>
+                <h1 class="mb-0 site-logo"><a href="{{ '/' | relative_url }}" class="text-black h2 mb-0"><img src="{{ '/assets/images/nerdma-logo.png' | relative_url }}" alt="Nerdma" class="logo"></a></h1>
             </div>
 
             <div class="col-12 col-md-9 col-xl-8 main-menu">
                 <nav class="site-navigation position-relative text-right" role="navigation">
 
                     <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block ml-0 pl-0">
-                        <li><a href="/about-us" class="nav-link">About Us</a></li>
-                        <li><a href="/services" class="nav-link">Services</a></li>
-                        <li><a href="#blog-section" class="nav-link">Training</a></li>
-                        <li><a href="#contact-section" class="nav-link">Contact</a></li>
+                        <li><a href="{{ '/about-us' | relative_url }}" class="nav-link">About Us</a></li>
+                        <li><a href="{{ '/services' | relative_url }}" class="nav-link">Our Services</a></li>
+                        <li><a href="{{ '/training' | relative_url }}" class="nav-link">Training</a></li>
+                        <li><a href="{{ '/join-the-team' | relative_url }}" class="nav-link">Join the team</a></li>
+                        <li><a href="{{ '/contact' | relative_url }}" class="nav-link">Contact Us</a></li>
                     </ul>
                 </nav>
             </div>
