@@ -11,19 +11,10 @@ $theme-colors: (
   primary: $red
 );
 $font-family-sans-serif:      'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-base:            $font-family-sans-serif;
 
 $gray-1: #f8f9fa;
 $gray-4: #ced4da;
-
-//$small-font-size:             .875em;
-//
-//$input-height-inner:                    add($input-line-height * 1em, $input-padding-y * 2);
-//$input-height-inner-half:               add($input-line-height * .5em, $input-padding-y);
-//$input-height-inner-quarter:            add($input-line-height * .25em, $input-padding-y * .5);
-//
-//$input-height:                          add($input-line-height * 1em, add($input-padding-y * 2, $input-height-border, false));
-//$input-height-sm:                       add($input-line-height-sm * 1em, add($input-padding-y-sm * 2, $input-height-border, false));
-//$input-height-lg:                       add($input-line-height-lg * 1em, add($input-padding-y-lg * 2, $input-height-border, false));
 
 @import "bootstrap/mixins";
 @import "bootstrap/bootstrap";
@@ -37,6 +28,12 @@ $gray-4: #ced4da;
 }
 .logo {
   width: 120px;
+}
+
+.site-section {
+  @include media-breakpoint-up(md) {
+    padding: 8em 0;
+  }
 }
 
 /** {*/
