@@ -40,6 +40,11 @@ $gray-4: #ced4da;
   max-width: 50%;
 }
 
+.banner-normal {
+  max-width: 50%;
+  right: 15%;
+}
+
 h2::after {
   content: '';
   display: block;
