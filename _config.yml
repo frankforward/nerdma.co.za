@@ -1,6 +1,6 @@
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "/nerdma.co.za" # the subpath of your site, e.g. /blog
-title: "" # the name of your site, e.g. ACME Corp.
+title: "Nerdma Systems" # the name of your site, e.g. ACME Corp.
 plugins:
   - jekyll-seo-tag
 

@@ -11408,6 +11408,10 @@ h1, h2, h3, h4, h5,
   }
 }
 
+.banner {
+  max-width: 50%;
+}
+
 h2::after {
   content: "";
   display: block;

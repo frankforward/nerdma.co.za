@@ -36,6 +36,10 @@ $gray-4: #ced4da;
   }
 }
 
+.banner {
+  max-width: 50%;
+}
+
 h2::after {
   content: '';
   display: block;
