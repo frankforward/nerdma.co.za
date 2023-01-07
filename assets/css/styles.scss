@@ -36,6 +36,20 @@ $gray-4: #ced4da;
   }
 }
 
+h2::after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 3em;
+  background-color: $primary;
+  margin-top: 0.6em;
+  
+  .text-center & {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 /** {*/
 /*  outline: 1px solid lightblue;*/
 /*}*/
