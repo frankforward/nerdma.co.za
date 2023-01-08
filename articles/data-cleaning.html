@@ -1,0 +1,612 @@
+---
+layout: page
+title: Data Cleaning
+permalink: /training/data-cleaning/
+---
+
+<h2>WHY CLEAN YOUR DATA?</h2>
+<p>
+    Knowing how to clean your data is advantageous for many reasons. Here are
+    just a few:
+</p>
+<ul>
+    <li>
+        It prevents you from wasting time on wobbly or even faulty analysis
+    </li>
+    <li>
+        It prevents you from making the wrong conclusions, which would make you
+        look bad!
+    </li>
+    <li>
+        It makes your analysis run faster. Correct, properly cleaned and
+        formatted data speed up computation in advanced algorithms
+    </li>
+</ul>
+<h2>WHAT THIS GUIDE IS FOR</h2>
+<p>
+    This guide will take you through the process of getting your hands dirty
+    with cleaning data.
+</p>
+<p>
+    We will dive into the practical aspects and little details that make the
+    big picture shine brighter.
+</p>
+<h2>DATA CLEANING IS A 3-STEP PROCESS</h2>
+<h3>STEP 1: FIND THE DIRT</h3>
+<p>
+    Start data cleaning by determining what is wrong with your data.
+</p>
+<h3>STEP 2: SCRUB THE DIRT</h3>
+<p>
+    Depending on the type of data dirt you're facing, you'll need different
+    cleaning techniques. This is the most intensive step.
+</p>
+<h3>STEP 3: RINSEAND REPAT</h3>
+<p>
+    Once cleaned, you repeat steps 1 and 2.
+</p>
+<h2>WHY CLEAN YOUR DATA?</h2>
+<p>
+    Start data cleaning by determining what is wrong with your data.
+</p>
+<p>
+    Look for the following:
+</p>
+<ul>
+    <li>
+        Are there rows with empty values? Entire columns with no data? Which
+        data is missing and why?
+    </li>
+    <li>
+        How is data distributed? Remember, visualizations are your friends.
+        Plot outliers. Check distributions to see which groups or ranges are
+        more heavily represented in your dataset.
+    </li>
+    <li>
+        Take note of the awkward: are there impossible values? Like 'date of
+        birth: male", "address: -1234".
+    </li>
+    <li>
+        Is your data consistent? Why are the same product names written in
+        uppercase and other times in camelCase?
+    </li>
+</ul>
+<p>
+    Wear your detective hat and jot down everything interesting, surprising or
+    even weird.
+</p>
+<h3>STEP 1: SCRUB THE DIRT</h3>
+<p>
+    The other half is solving it.
+</p>
+<p>
+    How do you solve it, though?
+</p>
+<p>
+    One ring might rule them all, but one approach is not going to cut it with
+    all your data cleaning problems.
+</p>
+<p>
+    Depending on the type of data dirt you're facing, you'll need different
+    cleaning techniques.
+</p>
+<h3>Step 2 is broken down into eight parts:</h3>
+<ul>
+    <li>
+        Missing Data
+    </li>
+    <li>
+        Outliers
+    </li>
+    <li>
+        Contaminated Data
+    </li>
+    <li>
+        Inconsistent Data
+    </li>
+    <li>
+        Invalid Data
+    </li>
+    <li>
+        Duplicate Data
+    </li>
+    <li>
+        Data Type Issues
+    </li>
+    <li>
+        Structural Errors
+    </li>
+</ul>
+<h4>STEP 2.1: MISSING DATA</h4>
+<p>
+    Sometimes you will have rows with missing values. Sometimes, almost entire
+    columns will be empty.
+</p>
+<p>
+    What to do with missing data? Ignoring it is like ignoring the holes in
+    your boat while at sea - you'll sink.
+</p>
+<p>
+    Start by spotting all the different disguises missing data wears. It
+    appears in values such as 0, "0", empty strings, "Not Applicable", "NA",
+    "#NA", None, NaN, NULL or Inf. Programmers before you might have put
+    default values instead of missing data ("xyz@entity.co.za").
+</p>
+<p>
+    When you have a general idea of what your missing data looks like, it is
+    time to answer the crucial question:
+</p>
+<p><em>"Is missing data telling me something valuable?"</em></p>
+<p>
+    There are 3 main approaches to cleaning missing data:
+</p>
+<ol>
+    <li>
+        Drop rows and/or columns with missing data. If the missing data is not
+        valuable, just drop the rows (i.e. specific customers, sensor reading,
+        or other individual exemplars) from your analysis. If entire columns
+        are filled with missing data, drop them as well. There is no need to
+        analyse the column "Quantity of New Awesome Product Bought" if no one
+        has bought it yet.
+    </li>
+</ol>
+<ol>
+    <li>
+        Recode missing data into a different format. Numerical computations can
+        break down with missing data. Recoding missing values into a different
+        column saves the day. For example, the column "payment date" with empty
+        rows can be recoded into a column "paid yet" with 0 for "no" and 1 for
+        "yes".
+    </li>
+</ol>
+<ol>
+    <li>
+        Fill in missing values with "best guesses." Use moving averages and
+        backfilling to estimate the most probable values of data at that point.
+        This is especially crucial for time-series analyses, where missing data
+        can distort your conclusions.
+    </li>
+</ol>
+<h4>STEP 2.2: OUTLIERS</h4>
+<p>
+    Outliers are data points which are at an extreme.
+</p>
+<p>
+    They usually have very high or very low values:
+</p>
+<ul>
+    <li>
+        A Free State sensor reading the temperature of 35<strong>º </strong>C
+        in winter
+    </li>
+    <li>
+        A customer who buys R0.15 worth of merchandise per year
+    </li>
+</ul>
+<p>
+    How to interpret those?
+</p>
+<p>
+    Outliers usually signify either very interesting behaviour or a broken
+    collection process.
+</p>
+<p>
+    Both are valuable information (hey, check your sensors, before checking
+    your outliers), but proceed with cleaning only if the behaviour is actually
+    interesting.
+</p>
+<p>
+    There are three approaches to dealing with outliers:
+</p>
+<ol>
+    <li>
+        Remove outliers from the analysis. Having outliers can mess up your
+        analysis by bringing the averages up or down and in general distorting
+        your statistics. Remove them by removing the upper and lower
+        X-percentile of your data.
+    </li>
+    <li>
+        Segment data so outliers are in a separate group. Put all the
+        "normal-looking" data in one group, and outliers in another. This is
+        especially useful for analysis of interest. You might find out that
+        your highest paying customers, who actually buy 3 times above average,
+        are an interesting target for marketing and sales. Keep outliers, but
+        use different statistical methods for analysis.
+    </li>
+    <li>
+        Weighted means (which put more weight on the "normal" part of the
+        distribution) and trimmed means are two common approaches of analysing
+        datasets with outliers, without suffering the negative consequences of
+        outliers.
+    </li>
+</ol>
+<h4>STEP 2.3: CONTAMINATED DATA</h4>
+<p>
+    Contaminated data is another red flag for your collection process.
+</p>
+<p>
+    Examples of contaminated data include:
+</p>
+<ul>
+    <li>
+        Wind turbine data in your water plant dataset.
+    </li>
+    <li>
+        Purchase information in your customer address dataset.
+    </li>
+    <li>
+        Future data in your current event time-series data.
+    </li>
+</ul>
+<p>
+    The last one is particularly sneaky.
+</p>
+<p>
+    Imagine having a row of financial trading information for each day.
+</p>
+<p>
+    Columns (or features) would include the date, asset type, asking price,
+    selling price, the difference in asking price from yesterday, the average
+    asking price for this quarter.
+</p>
+<p>
+    The average asking price for this quarter is the source of contamination.
+</p>
+<p>
+    You can only compute the averages once the quarter is over, but that
+    information would not be given to you on the trading date – thus
+    introducing future data, which contaminates the present data.
+</p>
+<p>
+    With corrupted data, there is not much you can do except for removing it.
+</p>
+<p>
+    This requires a lot of domain expertise.
+</p>
+<p>
+    When lacking domain knowledge, consult non-analytical members of your team.
+    Make sure to also fix any leakages your data collection pipeline has so
+    that the data corruption does not repeat with future data collection.
+</p>
+<h4>STEP 2.4: INCONSISTENT DATA</h4>
+<p>
+    "Wait, did we sell 'Apples', 'apples', or 'APPLES' this month? And what is
+    this 'monitor stand' for $999 under the same product ID?"
+</p>
+<p>
+    You have to expect inconsistency in your data.
+</p>
+<p>
+    Especially when there is a higher possibility of human error (e.g. when
+    salespeople enter the product info on proforma invoices manually).
+</p>
+<p>
+    The best way to spot inconsistent representations of the same elements in
+    your database is to visualize them.
+</p>
+<p>
+    Plot bar charts per product category.
+</p>
+<p>
+    Do a count of rows by category if this is easier.
+</p>
+<p>
+    When you spot the inconsistency, standardize all elements into the same
+    format.
+</p>
+<p>
+    Humans might understand that 'apples' is the same as 'Apples'
+    (capitalisation) which is the same as 'appels' (misspelling), but computers
+    think those three refer to three different things
+</p>
+<p>
+    altogether.
+</p>
+<p>
+    Lowercasing as default and correcting typos are your friends here.
+</p>
+<h4>STEP 2.5: INVALID DATA</h4>
+<p>
+    Similarly to corrupted data, invalid data is illogical.
+</p>
+<p>
+    For example, users who spend -2 hours on our app, or a person whose age is
+    170.
+</p>
+<p>
+    Unlike corrupted data, invalid data does not result from faulty collection
+    processes, but from issues with data processing (usually during feature
+    preparation or data cleaning).
+</p>
+<p>
+    Let us walk through an example:
+</p>
+<p>
+    You are preparing a report for your CEO about the average time spent in
+    your recently launched mobile app.
+</p>
+<p>
+    Everything works fine, the activities time looks great, except for a couple
+    of rogue examples.
+</p>
+<p>
+    You notice some users spent -22 hours in the app. Digging deeper, you go to
+    the source of this anomaly.
+</p>
+<p>
+    In-app time is calculated as finish_hour - start_hour. In other words,
+    someone who started using the app at 23:00 and finished at 01:00 in the
+    morning would have for their time_in_app -22 hours (1 - 23 = - 22).
+</p>
+<p>
+    Upon realizing that, you can correct the computations to prevent such
+    illogical data. Cleaning invalid data mostly means amending the functions
+    and transformations which caused the data to be invalid. If this is not
+    possible, we remove the invalid data.
+</p>
+<h4>STEP 2.6: DUPLICATE DATA</h4>
+<p>
+    Duplicate data means the same values repeating for an observation point.
+</p>
+<p>
+    This is damaging to our analysis because it can either deflate/inflate our
+    numbers (e.g. we count more customers than there actually are, or the
+    average changes because some values are more often represented).
+</p>
+<p>
+    There are different sources of duplicate data:
+</p>
+<ul>
+    <li>
+        Data are combined from different sources, and each source brings in the
+        same data to our database.
+    </li>
+    <li>
+        The user might submit information twice by clicking on the submit
+        button.
+    </li>
+    <li>
+        Our data collection code is off and inserts the same records multiple
+        times.
+    </li>
+</ul>
+<p>
+    There are three ways to eliminate duplicates:
+</p>
+<ol>
+    <li>
+        Find the same records and delete all but one.
+    </li>
+    <li>
+        Pairwise match records, compare them and take the most relevant one
+        (e.g. the most recent one)
+    </li>
+    <li>
+        Combine the records into entities via clustering (e.g. the cluster of
+        information about customer Harpreet Sahota, which has all the data
+        associated with it).
+    </li>
+</ol>
+<h4>STEP 2.7: DATA TYPE ISSUES</h4>
+<p>
+    Depending on which data type you work with (Date Time objects, strings,
+    integers, decimals or floats), you can encounter problems specific to data
+    types.
+</p>
+<h5>2.7.1 Cleaning string</h5>
+<p>
+    Strings are usually the messiest part of data cleaning because they are
+    often human-generated and hence prone to errors.
+</p>
+<p>
+    The common cleaning techniques for strings involve:
+</p>
+<ol>
+    <li>
+        Standardizing casing across the strings
+    </li>
+    <li>
+        Removing whitespace and newlines
+    </li>
+    <li>
+        Removing stop words (for some linguistic analyses)
+    </li>
+    <li>
+        Hot-encoding categorical variables represented as strings
+    </li>
+    <li>
+        Correcting typos
+    </li>
+    <li>
+        Standardizing encodings
+    </li>
+</ol>
+<p>
+    Especially the last one can cause a lot of problems. Encodings are the way
+    of translating between the 0's and 1's of computers and the human readable
+    representation of text.
+</p>
+<p>
+    And as there are different languages, there are different encodings.
+</p>
+<p>
+    Everyone has seen strings of the type 􀈼􀈼􀈼􀈼􀈼. Which meant our browser or
+    computer could not decode the string. It is the same as trying to play a
+    cassette on your gramophone. Both are made for music, but they represent it
+    in different ways.
+</p>
+<p>
+    When in doubt, go for UTF-8 as your encoding standard.
+</p>
+<h5>2.7.2 Cleaning date and time</h5>
+<p>
+    Dates and time can be tricky. Sometimes the error is not apparent until
+    doing computations (like the activity duration example above) on date and
+    times.
+</p>
+<p>
+    The cleaning process involves:
+</p>
+<p>
+    Making sure that all your dates and times are either a Date Time object or
+    a Unix timestamp (via type coercion). Do not be tricked by strings
+    pretending to be a Date Time object, like "24 Oct 2019". Check for data
+    type and coerce where necessary.
+</p>
+<p>
+    Internationalization and time zones. Date Time objects are often recorded
+    with the time zone or without one. Either of those can cause problems. If
+    you are doing region-specific analysis, make sure to have Date Time in the
+    correct timezone. If you do not care about internationalization, convert
+    all Date Time objects to your timezone.
+</p>
+<h4>STEP 2.8: STRUCTURAL ERRORS</h4>
+<p>
+    Even though we treated data issues comprehensively, there is a class of
+    problems with data, which arise due to structural errors.
+</p>
+<p>
+    Structural errors arise during measurement, data transfer, or other
+    situations.
+</p>
+<p>
+    Structural errors can lead to inconsistent data, data duplication, or
+    contamination.
+</p>
+<p>
+    But unlike the treatment advised above, you are not going to solve
+    structural errors by applying cleaning techniques to them.
+</p>
+<p>
+    Because you can clean the data all you want, but at the next import, the
+    structural errors will produce unreliable data again.
+</p>
+<p>
+    Structural errors are given special treatment to emphasize that a lot of
+    data cleaning is about preventing data issues rather than resolving data
+    issues.
+</p>
+<p>
+    So you need to review your engineering best practices.
+</p>
+<p>
+    Check your ETL pipeline and how you collect and transform data from their
+    raw data sources to identify where the source of structural errors is and
+    remove it.
+</p>
+<h3>STEP 3: RINSE AND REPEAT</h3>
+<p>
+    Once cleaned, you repeat steps 1 and 2.
+</p>
+<p>
+    This is helpful for three reasons:
+</p>
+<ul>
+    <li>
+        You might have missed something. Repeating the cleaning process helps
+        you catch those pesky hidden issues.
+    </li>
+    <li>
+        Through cleaning, you discover new issues. For example, once you
+        removed outliers from your dataset, you noticed that data is not
+        bell-shaped anymore and needs reshaping before you can analyse it.
+    </li>
+    <li>
+        You learn more about your data. Every time you sweep through your
+        dataset and look at the distributions of values, you learn more about
+        your data, which gives you hunches as to what to analyse.
+    </li>
+</ul>
+<p>
+    Data scientists spend 80% of their time cleaning and organizing data
+    because of the associated benefits.
+</p>
+<p>
+    Or as the old machine learning wisdom goes:
+</p>
+<h3><em>Garbage in, garbage out.</em></h3>
+<p>
+    All algorithms can do is spot patterns.
+</p>
+<p>
+    And if they need to spot patterns in a mess, they are going to return
+    "mess" as the governing pattern.
+</p>
+<p>
+    Clean data beats fancy algorithms any day.
+</p>
+<p>
+    But cleaning data is not in the sole domain of data science. High-quality
+    data are necessary for any type of decision-making.
+</p>
+<p>
+    From start-ups launching the next Google search algorithm to business
+    enterprises relying on Microsoft Excel for their business intelligence -
+    clean data is the pillar upon which data-driven decision-making rests.
+</p>
+<h3>AUTOMATE YOUR DATA CLEANING</h3>
+<p>
+    By now it is clear how important data cleaning is.
+</p>
+<p>
+    But it still takes way too long. And it is not the most intellectually
+    stimulating challenge.
+</p>
+<p>
+    To avoid losing time, while not neglecting the data cleaning process, data
+    practitioners automate a lot of repetitive cleaning tasks.
+</p>
+<p>
+    Mainly there are two branches of data cleaning that you can automate:
+</p>
+<p>
+    Problem discovery. Use any visualization tools that allow you to quickly
+    visualise missing values and different data distributions.
+</p>
+<p>
+    Transforming data into the desired form. The majority of data cleaning is
+    running reusable scripts, which perform the same sequence of actions. For
+    example: 1) lowercase all strings, 2) remove whitespace, 3) break down
+    strings into words.
+</p>
+<p>
+    Whether automation is your cup of tea or not, remember the main steps when
+    cleaning data:
+</p>
+<ol>
+    <li>
+        Identify the problematic data
+    </li>
+    <li>
+        Clean the data
+    </li>
+    <li>
+        Remove, encode, fill in any missing data
+    </li>
+    <li>
+        Remove outliers or analyse them separately
+    </li>
+    <li>
+        Purge contaminated data and correct leaking pipelines
+    </li>
+    <li>
+        Standardize inconsistent data
+    </li>
+    <li>
+        Check if your data makes sense (is valid)
+    </li>
+    <li>
+        Deduplicate multiple records of the same data, foresee and prevent type
+        issues (string issues, Date Time issues)
+    </li>
+    <li>
+        Remove engineering errors (aka structural errors)
+    </li>
+    <li>
+        Rinse and repeat
+    </li>
+</ol>
+<p>
+    Keep a list of those steps by your side and make sure your data gives you
+    the valuable insights you need.
+</p>

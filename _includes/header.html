@@ -28,7 +28,12 @@
                             </ul>
                         </li>
                         <li><a href="{{ '/services' | relative_url }}" class="nav-link">What we offer</a></li>
-                        <li><a href="{{ '/training' | relative_url }}" class="nav-link">Training</a></li>
+                        <li class="has-children">
+                            <a href="{{ '/training' | relative_url }}" class="nav-link">Training</a>
+                            <ul class="dropdown">
+                                <li><a href="{{ '/training/data-cleaning/' | relative_url }}">Data Cleaning</a></li>
+                            </ul>
+                        </li>
                         <li><a href="{{ '/join-the-team' | relative_url }}" class="nav-link">Join the team</a></li>
                         <li><a href="{{ '/contact' | relative_url }}" class="nav-link">Contact Us</a></li>
                     </ul>
