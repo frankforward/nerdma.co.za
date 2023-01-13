@@ -11411,6 +11411,15 @@ h1, h2, h3, h4, h5,
     padding: 8em 0;
   }
 }
+@media (max-width: 767.98px) {
+  .site-section.heading-section {
+    padding: 5.5em 0 2.5em 0;
+  }
+}
+
+.post {
+  padding-top: 5em;
+}
 
 @media (min-width: 992px) {
   .banner {
