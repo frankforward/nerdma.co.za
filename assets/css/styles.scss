@@ -77,6 +77,12 @@ h2::after {
 margin-top: 5em;  
 }
 
+.site-blocks-cover {
+  &:after {
+    background-image: none;
+  }
+}
+
 /** {*/
 /*  outline: 1px solid lightblue;*/
 /*}*/
