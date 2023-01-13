@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="/nerdma.co.za/assets/css/aos.css">
   <link rel="stylesheet" href="/nerdma.co.za/assets/css/styles.css"></head>
 <body>
-  <div class="site-wrap"  id=""><div class="site-mobile-menu site-navbar-target">
+  <div class="site-wrap"  id="home-section"><div class="site-mobile-menu site-navbar-target">
     <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close mt-3">
             <span class="icon-close2 js-menu-toggle"></span>
@@ -36,7 +36,7 @@
         <div class="row align-items-center">
 
             <div class="col-6 col-md-2 col-xl-4  d-block">
-                <h1 class="mb-0 site-logo"><a href="/nerdma.co.za/" class="text-black h2 mb-0"><img src="/nerdma.co.za/assets/images/nerdma-logo.png" alt="Nerdma" class="logo"></a></h1>
+                <a href="/nerdma.co.za/" class="text-black h2 mb-0 site-logo"><img src="/nerdma.co.za/assets/images/nerdma-logo.png" alt="Nerdma" class="logo"></a>
             </div>
 
             <div class="col-12 col-md-10 col-xl-8 main-menu">
@@ -67,28 +67,69 @@
         </div>
     </div>
 </header>
-<article class="post">
-
-  <header class="post-header">
+<div class="site-section heading-section">
     <div class="container">
-      <div class="row">
-        <div class="col-12">
-    <h1 class="post-title">Contact Us</h1>
+        <div class="row justify-content-center">
+            <div class="col-10 text-center">
+                <h1 class="section-title">Contact Us</h1>
+                <p class="lead mt-4">
+                    We would like to hear from you
+                </p>
+                <div class="mt-5">
+                    <form target="_blank" action="https://formsubmit.co/admin@nerdma.co.za" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="_subject" value="Message posted via website!">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="http://localhost:4000/nerdma.co.za/thank-you-for-submitting">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" name="name" placeholder="Full name *" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" name="phone" placeholder="Phone number *" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" placeholder="Email *" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea type="text" rows="4" class="form-control" name="message" placeholder="Message *" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </header>
-  
-  <div class="post-content">
-      <div class="container">
+</div>
+
+<div class="site-section bg-light">
+    <div class="container">
         <div class="row">
-          <div class="col-12">
-            <h2 id="resourcing">Resourcing</h2>
-ss
-          </div>
+            <div class="col-lg-8 col-sm-12">
+                <h2 class="mt-4 section-title">
+                    Our physical locations.
+                </h2>
+                <ul class="mt-4">
+                    <li>
+                        <h4>Sandton</h4>
+                        <p>4th Floor, TBE, 96 Rivonia Road, Sandton, 2196</p>
+                    </li>
+                    <li>
+                        <h4>Morningside</h4>
+                        <p>140A Kelvin Dr, Morningside Manor, Johannesburg, 2196</p>
+                    </li>
+                    <li>
+                        <h4>Get hold of us on:</h4>
+                        <p id="phone-numbers">
+                            <a href="tel://+27100130508">+27 100 13 0508</a><br>
+                            <a href="tel://+27100352575">+27 100 35 2575</a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-  </div><section id="join-the-team-teaser">
+</div><section id="join-the-team-teaser">
     <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col-10 text-center">
@@ -101,7 +142,8 @@ ss
             </div>
         </div>
     </div>
-</section></article>
+</section>
+
     <div class="container">
         <footer class="py-5">
             <div class="row">

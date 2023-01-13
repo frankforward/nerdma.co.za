@@ -60,6 +60,7 @@ $gray-4: #ced4da;
   max-width: 50%;
 }
 
+h1::after,
 h2::after {
   content: '';
   display: block;
