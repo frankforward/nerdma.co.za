@@ -40,8 +40,10 @@ $gray-4: #ced4da;
 }
 
 .banner {
-  max-width: 50%;
-  right: 15%;
+  @include media-breakpoint-up(lg) {
+    max-width: 50%;
+    right: 15%;
+  }
 }
 
 .banner-normal {

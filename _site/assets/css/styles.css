@@ -11412,9 +11412,11 @@ h1, h2, h3, h4, h5,
   }
 }
 
-.banner {
-  max-width: 50%;
-  right: 15%;
+@media (min-width: 992px) {
+  .banner {
+    max-width: 50%;
+    right: 15%;
+  }
 }
 
 .banner-normal {
