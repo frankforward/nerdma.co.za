@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://www.nerdma.co.za/</loc>
+  <lastmod>2023-01-14T11:56:36+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.nerdma.co.za/about-us/</loc>
+  <lastmod>2023-01-14T11:56:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.nerdma.co.za/what-we-offer/</loc>
+  <lastmod>2023-01-14T11:56:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.nerdma.co.za/join-the-team/</loc>
+  <lastmod>2023-01-14T11:56:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.nerdma.co.za/training/</loc>
+  <lastmod>2023-01-14T11:56:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.nerdma.co.za/training/data-cleaning/</loc>
+  <lastmod>2023-01-14T11:56:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.nerdma.co.za/training/cyber-security/</loc>
+  <lastmod>2023-01-14T11:56:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.nerdma.co.za/environment-social-and-governance/</loc>
+  <lastmod>2023-01-14T11:56:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.nerdma.co.za/contact-us/</loc>
+  <lastmod>2023-01-14T11:56:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.nerdma.co.za/privacy-policy/</loc>
+  <lastmod>2023-01-14T11:56:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.nerdma.co.za/terms-and-conditions/</loc>
+  <lastmod>2023-01-14T11:56:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.nerdma.co.za/assets/files/Nerdma-CYBERSECURITY.pdf</loc>
+  <lastmod>2023-01-14T11:56:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.nerdma.co.za/assets/files/Nerdma-ESG.pdf</loc>
+  <lastmod>2023-01-14T11:56:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
