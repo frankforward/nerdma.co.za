@@ -11416,6 +11416,12 @@ h1, h2, h3, h4, h5,
     padding: 5.5em 0 2.5em 0;
   }
 }
+.site-section.bg-01 {
+  background-image: url("/nerdma.co.za/assets/images/bg-01.png");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: cover;
+}
 
 .post {
   padding-top: 5em;
